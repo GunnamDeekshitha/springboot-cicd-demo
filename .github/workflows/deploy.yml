@@ -21,6 +21,8 @@ jobs:
 
       - name: Build Project
         run: mvn clean install
+        working-directory: ./cicd-demo
 
       - name: Run Tests
         run: mvn test
+        working-directory: ./cicd-demo
