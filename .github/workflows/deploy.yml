@@ -19,11 +19,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Give execute permission
-        run: chmod +x mvnw
-
       - name: Build Project
-        run: ./mvnw clean install
+        run: mvn clean install
 
       - name: Run Tests
-        run: ./mvnw test
+        run: mvn test
