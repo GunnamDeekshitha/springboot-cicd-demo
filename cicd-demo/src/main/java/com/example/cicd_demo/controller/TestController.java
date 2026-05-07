@@ -1,4 +1,4 @@
-package com.example.cicddemo.controller;
+package com.example.cicd_demo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +8,6 @@ public class TestController {
 
     @GetMapping("/")
     public String home() {
-        return "CI/CD Working!";
+        return "CI/CD worked very well!";
     }
 }
