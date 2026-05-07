@@ -1,0 +1,29 @@
+name: Spring Boot CI/CD
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Give execute permission
+        run: chmod +x mvnw
+
+      - name: Build Project
+        run: ./mvnw clean install
+
+      - name: Run Tests
+        run: ./mvnw test
