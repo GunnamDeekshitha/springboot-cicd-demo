@@ -17,13 +17,12 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
-
-      - name: Give execute permission
-        run: chmod +x mvnw
+          java-version: 21
 
       - name: Build Project
-        run: ./mvnw clean install
+        run: mvn clean install
+        working-directory: ./cicd-demo
 
       - name: Run Tests
-        run: ./mvnw test
+        run: mvn test
+        working-directory: ./cicd-demo
